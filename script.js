@@ -64,7 +64,24 @@ function DeleteInfo(id) {
     SaveInfo(userArray);
 }
 
-// A
+// Search
+const trAll = document.querySelectorAll("#displaytask tr")
+const searchInput = document.getElementById("search")
+searchInput.addEventListener('input', function(e) {
+    const searchTask = e.target.value.toLowerCase();
+    displaytask.innerHTML = '';
+    trAll.forEach(tr => {
+        const tdIntr = tr.querySelectorAll('td')
+        if (tdIntr[0].innerText.toLowerCase().indexOf(searchTask) > -1) {
+            displaytask.appendChild(tr);
+        }
+    })
+    if (displaytask.innerHTML == '') {
+        displaytask.innerHTML = "No Record found"
+    }
+})
+
+// Check Box
 const checkboxes = document.querySelectorAll('.task-checkbox');
 
 checkboxes.forEach((checkbox, index) => {
