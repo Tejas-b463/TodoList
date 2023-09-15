@@ -9,3 +9,23 @@
 *:focus {
     box-shadow: none !important;
 }
+
+
+/* Clear Buttons */
+
+#clearButton {
+    padding: 5px 10px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
