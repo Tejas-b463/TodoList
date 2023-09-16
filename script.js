@@ -36,14 +36,13 @@ function SaveInfo(arr) {
     localStorage.setItem('users', str)
     DisplayInfo()
 
+
 }
 // Display Task
 function DisplayInfo() {
     let statement = '';
     userArray.forEach((user, index) => {
         statement += ` <tr>
-       
-            
             <th> <input type="checkbox" class="task-checkbox"> </th>
             <td>${user.name}</td>
             <td><i class='btn bx bxs-edit-alt  fs-4' onclick='EditInfo(${index})'></i>
@@ -56,7 +55,7 @@ function DisplayInfo() {
 function EditInfo(id) {
     edit = id;
     taskUser.value = userArray[id].name;
-    addUser.innerText = "Changes";
+    addUser.innerText = "CHANGE";
 }
 // Delete Task
 function DeleteInfo(id) {
@@ -77,7 +76,7 @@ searchInput.addEventListener('input', function(e) {
         }
     })
     if (displaytask.innerHTML == '') {
-        displaytask.innerHTML = "No Record found"
+        displaytask.innerHTML = "No Task found❗"
     }
 })
 

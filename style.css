@@ -29,3 +29,37 @@
     height: 1px;
     background: #eee;
 }
+
+#addUser {
+    font-weight: 800;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#taskUser {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#search {
+    width: 250px;
+    height: 32px;
+    margin-bottom: 15px;
+    border-radius: 3%;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.list-group a {
+    color: black;
+    cursor: pointer;
+}
+
+.list-group a:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+    font-size: 25px;
+    margin: 0 15px;
+}
