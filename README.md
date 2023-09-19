@@ -8,3 +8,4 @@
 - Local Storage
 - Complete Task by checking the checkbox
 - Search Task
+- Footer

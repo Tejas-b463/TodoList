@@ -1,20 +1,29 @@
 // Add Task
 
-const addUser = document.getElementById("addUser");
-const btn = addUser.innerText;
+// userfield
 const taskUser = document.getElementById("taskUser");
+// addUser - button
+const addUser = document.getElementById("addUser");
+// edit innerText assign
+const btn = addUser.innerText;
 const displaytask = document.getElementById("displaytask")
-let edit = null;
-let userArray = [];
+
+
+
+let userArray = []
 
 // get data
 let objString = localStorage.getItem('users');
 if (objString != null) {
     userArray = JSON.parse(objString);
 }
+
+
 DisplayInfo();
+
 addUser.onclick = () => {
     const name = taskUser.value;
+    // edit id null nahi hai to insert karvayege
     if (edit != null) {
         userArray.splice(edit, 1, { 'name': name })
         edit = null;
@@ -24,10 +33,12 @@ addUser.onclick = () => {
     }
 
     SaveInfo(userArray)
+        // input field value blank
     taskUser.value = "";
 
 
-    addUser.innerText = btn
+    // edit - innerText button
+    addUser.innerTe
 
 }
 
@@ -35,8 +46,6 @@ function SaveInfo(arr) {
     let str = JSON.stringify(arr)
     localStorage.setItem('users', str)
     DisplayInfo()
-
-
 }
 // Display Task
 function DisplayInfo() {
@@ -51,7 +60,11 @@ function DisplayInfo() {
     });
     displaytask.innerHTML = statement;
 }
+
+
 // Update Task
+let edit = null;
+
 function EditInfo(id) {
     edit = id;
     taskUser.value = userArray[id].name;
@@ -65,6 +78,7 @@ function DeleteInfo(id) {
 
 // Search
 const trAll = document.querySelectorAll("#displaytask tr")
+    // input search field
 const searchInput = document.getElementById("search")
 searchInput.addEventListener('input', function(e) {
     const searchTask = e.target.value.toLowerCase();
